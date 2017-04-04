@@ -1,1 +1,8 @@
-theme: jekyll-theme-hacker
+title: LS Plugin Topic Similar
+description: Похожие публикации
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+- jekyll-mentions
