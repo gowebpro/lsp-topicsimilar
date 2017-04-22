@@ -1,3 +1,7 @@
-<div class="ls-topic-similar">
-    {show_blocks group='comments_after'}
-</div>
+{show_blocks group='comments_after' assign=similarTopicBlocksAfterComments}
+
+{if $similarTopicBlocksAfterComments}
+    <div class="ls-topic-similar">
+        {$similarTopicBlocksAfterComments}
+    </div>
+{/if}
