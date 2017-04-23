@@ -18,9 +18,18 @@ class PluginTopicsimilar_HookMain extends Hook
      */
     public function RegisterHook()
     {
+        $this->AddHook('start_action', 'StartAction');
         $this->AddHook('topic_show', 'TopicShow');
         $this->AddHook('template_comments_begin', 'TplCommentsBefore');
         $this->AddHook('template_comments_end', 'TplCommentsAfter');
+    }
+
+    /**
+     * Добавляем к загрузке компоненты плагина
+     */
+    public function StartAction()
+    {
+        $this->Component_Add('topicsimilar:goweb-topic');
     }
 
     public function TopicShow($aVars = [])

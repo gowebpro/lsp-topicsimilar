@@ -21,8 +21,8 @@ class PluginTopicsimilar_BlockSimilar extends Block
      */
     public function Exec()
     {
-        $aTags = array();
-        $aExcludeTopic = array();
+        $aTags = [];
+        $aExcludeTopic = [];
         if ($oTopic = $this->GetParam('topic')) {
             $aTags = $oTopic->getTagsArray();
             $aExcludeTopic[] = $oTopic->getId();
@@ -33,7 +33,11 @@ class PluginTopicsimilar_BlockSimilar extends Block
          * Топики по тегам
          */
         $aSimilarTopics = $this->Topic_GetTopicsSimilarByTags((array)$aTags, $aExcludeTopic, Config::Get('plugin.topicsimilar.block.row'));
-        $this->Viewer_Assign('aSimilarTopics', $aSimilarTopics);
+        $this->Viewer_Assign('topics', $aSimilarTopics, true);
+        /**
+         * Устанавливаем шаблон
+         */
+        $this->SetTemplate('component@topicsimilar:goweb-topic.block.similar');
     }
 
 }

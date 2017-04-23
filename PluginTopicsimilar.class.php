@@ -28,10 +28,6 @@ class PluginTopicsimilar extends Plugin
      */
     public function Init()
     {
-        /**
-         * Подключаем CSS
-         */
-        $this->Viewer_AppendStyle(Plugin::GetTemplatePath(__CLASS__) . 'assets/css/style.css');
         return true;
     }
 }
